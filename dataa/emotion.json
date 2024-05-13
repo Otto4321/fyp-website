@@ -1,0 +1,106 @@
+[
+    {
+      "emotion": "angry",
+      "timestamp": "2024/3/1 13:00:00"
+    },
+    {
+      "emotion": "angry",
+      "timestamp": "2024/3/1 13:01:00"
+    },
+    {
+      "emotion": "neutral",
+      "timestamp": "2024/3/1 13:01:02"
+    },
+    {
+      "emotion": "disgust",
+      "timestamp": "2024/3/1 13:02:55"
+    },
+    {
+      "emotion": "sad",
+      "timestamp": "2024/3/1 16:00:03"
+    },
+    {
+      "emotion": "sad",
+      "timestamp": "2024/3/1 16:00:05"
+    },
+    {
+      "emotion": "happy",
+      "timestamp": "2024/3/2 15:00:00"
+    },
+    {
+      "emotion": "disgust",
+      "timestamp": "2024/3/2 19:00:00"
+    },
+    {
+      "emotion": "fear",
+      "timestamp": "2024/3/2 22:00:00"
+    },
+    {
+      "emotion": "fear",
+      "timestamp": "2024/3/3 12:00:00"
+    },
+    {
+      "emotion": "happy",
+      "timestamp": "2024/3/3 14:00:00"
+    },
+    {
+      "emotion": "angry",
+      "timestamp": "2024/3/4 12:00:00"
+    },
+    {
+      "emotion": "angry",
+      "timestamp": "2024/3/4 12:00:02"
+    },
+    {
+      "emotion": "neutral",
+      "timestamp": "2024/3/4 12:00:05"
+    },
+    {
+      "emotion": "sad",
+      "timestamp": "2024/3/5 13:30:00"
+    },
+    {
+      "emotion": "surprise",
+      "timestamp": "2024/3/5 13:35:00"
+    },
+    {
+      "emotion": "happy",
+      "timestamp": "2024/3/5 13:35:10"
+    },
+    {
+      "emotion": "happy",
+      "timestamp": "2024/3/6 15:00:00"
+    },
+    {
+      "emotion": "happy",
+      "timestamp": "2024/3/6 14:00:00"
+    },
+    {
+      "emotion": "happy",
+      "timestamp": "2024/3/7 13:35:00"
+    },
+    {
+      "emotion": "fear",
+      "timestamp": "2024/4/23 21:00:00"
+    },
+    {
+      "emotion": "happy",
+      "timestamp": "2024/5/4 13:35:00"
+    },
+    {
+      "emotion": "happy",
+      "timestamp": "2024/5/7 21:35:00"
+    },
+    {
+      "emotion": "surprise",
+      "timestamp": "2024/5/7 21:40:00"
+    },
+    {
+      "emotion": "happy",
+      "timestamp": "2024/5/7 21:45:00"
+    },
+    {
+      "emotion": "happy",
+      "timestamp": "2024/5/8 21:45:00"
+    }
+  ]
