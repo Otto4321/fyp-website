@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/signup.css" />
+    <script src="./scripts/signup.js"></script>
+    <title>eCare</title>
+</head>
+<body>
+    <div class="container">
+        <div class="center">       
+            <h1><span class="welcome">歡迎註冊</span> <br><b>eCare</b></h1>
+            <form action="" method="POST">
+                <div class="name_field">
+                    <input type="text" name="name" pattern="[a-zA-Z\u4e00-\u9fa5]+" required>
+                    <span></span>
+                    <label>名稱</label>
+                </div>
+                <div class="age_field">
+                    <input type="number" name="age" pattern="[0-9]+" required>
+                    <span></span>
+                    <label>年齡</label>
+                </div>
+                <div class="choose_gender">
+                    <label style="--clr: #6be7ff">
+                        <input TYPE="Radio" Name="Gender" Value="male" required>
+                        <i> </i>
+                        <span>男性</span>
+                    </label>
+                    <label style="--clr: #ff7ab2">
+                        <input TYPE="Radio" Name="Gender" Value="female" required>
+                        <i> </i>
+                        <span>女性</span>
+                    </label>
+                </div>
+                <br>
+                <div class="reset-submit">
+                    <input name="reset" type="reset" value="重設">
+                    <input name="submit" type="Submit" value="註冊">
+                </div>
+                <br>
+                <input type="button" value="返回登入頁面" onclick="goToLogin()">
+            </form>
+        </div>
+      </div>
+</body>
+</html>

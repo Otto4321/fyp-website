@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/suggest.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>suggest</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen'></i>
+            <span class="logo"><a href="main.html">eCare</a></span>
+            <div class="menu">
+              <ul class="nav-links">
+                <li><a href="quiz.html">測試</a></li>
+                <li><a href="suggest.html">報告/建議</a></li>
+                <li><a href="music.html">音樂偏好</a></li>
+                <li><a href="camera.html">cam</a></li>
+                <li><a href="activate.html">激活裝置</a></li>
+                <li><a href="dashboard.html">情緒分析</a></li>
+                <li><a href="aboutus.html">關於我們</a></li>
+                <li><a href="login.html" class="quit">退出</a></li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+        <table border="">
+            <tr>
+                <td class="table-title">eCare</td>
+            </tr>
+            <tr>
+                <td id="user-info"></td>
+            </tr>
+            <tr>
+                <td id="test-score"></td>
+            </tr>
+            <tr>
+                <td id="suggestion"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        // Fetch data using the Fetch API
+        fetch('./data/users.json')
+            .then(response => response.json())
+            .then(data => {
+                const users = data.users;
+                displayUserInfo(users);
+                displayTestScore(users);
+                displaySuggestion(users);
+            })
+            .catch(error => console.log(error));
+
+        // find user name
+        findusername = 'Kenny';
+
+        // display user info
+        function displayUserInfo(users) {
+            const totalRecords = document.getElementById('user-info');
+            let userInfo = '';
+          
+            users.forEach(user => {
+              if (user.username === findusername) {
+                userInfo += `姓名: ${user.username}<br>`;
+                userInfo += `年齡: ${user.age}<br>`;
+                if (user.gender === 'male'){
+                    userInfo += `性別: 男<br><br>`;
+                } else {
+                    userInfo += `性別: 女<br><br>`;
+                }
+              }
+            });
+          
+            totalRecords.innerHTML = userInfo;
+          }
+
+        // display test score and degree
+        function displayTestScore(users) {
+            const totalRecords = document.getElementById('test-score');
+            let testResults = '';
+          
+            users.forEach(user => {
+              if (user.username === findusername) {
+                if (user.score == null) {
+                    testResults += `請先做測試`;
+                } else {
+                    testResults += `測試結果:<br>`;
+                    testResults += `分數: ${user.score}<br>`;
+              
+                    if (user.score >= 17) {
+                      testResults += `程度：沒問題<br><br>`;
+                    } else if (user.score >= 13 && user.score <= 16) {
+                      testResults += `程度: 輕微<br><br>`;
+                    } else if (user.score >= 9 && user.score <= 12) {
+                      testResults += `程度: 中等<br><br>`;
+                    } else if (user.score <= 8) {
+                      testResults += `程度: 嚴重<br><br>`;
+                    } else {
+                      testResults += `程度: 錯誤<br><br>`;
+                    }
+                  }
+                }
+
+            });
+          
+            totalRecords.innerHTML = testResults;
+          }
+
+          function displaySuggestion(users) {
+            const totalRecords = document.getElementById('suggestion');
+            let suggestions = '';
+          
+            users.forEach(user => {
+              if (user.username === findusername) {
+                suggestions += `建議:<br>`;
+          
+                if (user.score >= 17) {
+                  suggestions += `1. 尋找專業醫療機構做一個更詳細的判斷<br>`;
+                  suggestions += `2. 多運動和多動腦<br>`;
+                  suggestions += `3. 多社會互動<br>`;
+                  suggestions += `4. 採地中海型飲食和維持健康體重<br><br>`;
+                } else if (user.score >= 13 && user.score <= 16) {
+                  suggestions += `1. 尋找專業醫療機構做一個更詳細的判斷<br>`;
+                  suggestions += `2. 尋找專業醫療機構進行「認知刺激療法」或「認知訓練」<br>`;
+                  suggestions += `3. 使用我們的音樂治療服務<br>`;
+                  suggestions += `4. 維持正常血壓、血糖及膽固醇<br>`;
+          
+                  // Get the user's music preference
+                  const musicPreference = user.music_preference;
+          
+                  // Check the music preference and suggest related music
+                  if (musicPreference === "古典樂") {
+                    suggestions += `5. 播放一些古典音樂，如巴赫、莫札特或貝多芬。<br>`;
+                  } else if (musicPreference === "經典港樂") {
+                    suggestions += `5. 播放一些經典港樂，如劉德華、張學友或容祖兒的歌曲。<br>`;
+                  } else if (musicPreference === "流行港樂") {
+                    suggestions += `5. 播放一些流行港樂，如陳奕迅、謝霆鋒或林忆莲的歌曲。<br>`;
+                  } else if (musicPreference === "英語經典") {
+                    suggestions += `5. 播放一些英語經典音樂，如The Beatles、Queen或Michael Jackson的歌曲。<br>`;
+                  }
+                } else if (user.score >= 9 && user.score <= 12) {
+                  suggestions += `1. 尋找專業醫療機構做一個更詳細的判斷<br>`;
+                  suggestions += `2. 尋找專業醫療機構進行藥物治療或非藥物治療<br>`;
+                  suggestions += `3. 使用我們的音樂治療服務<br>`;
+                  suggestions += `4. 以運動、靜坐、瑜珈等方式釋放壓力<br>`;
+                  suggestions += `5. 立即戒煙<br>`;
+                } else if (user.score <= 8) {
+                  suggestions += `1. 尋找專業醫療機構做一個更詳細的判斷<br>`;
+                  suggestions += `2. 使用我們的音樂治療服務<br>`;
+                  suggestions += `3. 維持正常血壓、血糖及膽固醇<br>`;
+                  suggestions += `4. 避免頭部受傷<br>`;
+                  suggestions += `5. 立即戒煙<br>`;
+                }
+              }
+            });
+          
+            totalRecords.innerHTML = suggestions;
+          }
+  
+    </script>
+</body>
+
+</html>

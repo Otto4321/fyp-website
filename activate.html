@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/activate.css" />
+    <title>eCare</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen'></i>
+            <span class="logo"><a href="main.html">eCare</a></span>
+            <div class="menu">
+                <ul class="nav-links">
+                    <li><a href="quiz.html">測試</a></li>
+                    <li><a href="suggest.html">報告/建議</a></li>
+                    <li><a href="music.html">音樂偏好</a></li>
+                    <li><a href="camera.html">cam</a></li>
+                    <li><a href="activate.html">激活裝置</a></li>
+                    <li><a href="dashboard.html">情緒分析</a></li>
+                    <li><a href="aboutus.html">關於我們</a></li>
+                    <li><a href="login.html" class="quit">退出</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <input type="checkbox" id="check" onclick="isChecked()">
+        <label for="check" class="button"></label>
+        <p id="message">未激活</p>
+    </div>
+
+    <script src="./scripts/activate.js"></script>
+</body>
+</html>

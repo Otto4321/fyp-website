@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test Your Skills</title>
+    <link rel="stylesheet" href="./css/quiz.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav>
+            <div class="nav-bar">
+                <i class='bx bx-menu sidebarOpen'></i>
+                <span class="logo"><a href="main.html">eCare</a></span>
+                <div class="menu">
+                    <ul class="nav-links">
+                        <li><a href="quiz.html">測試</a></li>
+                        <li><a href="suggest.html">報告/建議</a></li>
+                        <li><a href="music.html">音樂偏好</a></li>
+                        <li><a href="camera.html">cam</a></li>
+                        <li><a href="activate.html">激活裝置</a></li>
+                        <li><a href="dashboard.html">情緒分析</a></li>
+                        <li><a href="aboutus.html">關於我們</a></li>
+                        <li><a href="login.html" class="quit">退出</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div id="form-box">
+            <p>開始前請閱讀以下規則:</p>
+            <p>1.測試共有20條問題</p>
+            <p>2.完成後會自動分析結果</p>
+            <p>3.如清楚明白</p>
+            <p>請按√繼續 x返回主選單</p>
+            <img src="./images/tick.png" alt="開始測試" class="choose-lang">
+            <img src="./images/cross.png" alt="返回主頁" class="go-to-main">
+        </div>
+    </div>
+
+    <div class="quiz">
+        <div id="info">
+            <div id="score">Score: 0</div>
+            <div id="ques-left">Question:1/20</div>
+        </div>
+        <div id="ques-view">
+
+        </div>
+        <div class="question">
+            <h1>Question</h1>
+        </div>
+
+        <div class="choice">
+            <div class="options"><input type="radio" name="options" value="option1" id="opt0"><label for="opt0"
+                    id="lb0">Option1</label></div>
+            <div class="options"><input type="radio" name="options" value="option2" id="opt1"><label for="opt1"
+                    id="lb1">Option2</label></div>
+            <div class="options"><input type="radio" name="options" value="option3" checked="checked" id="opt2"><label
+                    for="opt2" id="lb2">Option3</label></div>
+            <div class="options"><input type="radio" name="options" value="option4" id="opt3"><label for="opt3"
+                    id="lb3">Option4</label></div>
+        </div>
+
+        <div class="ans-btn">
+            <button type="button" class="submit-answer">Submit Answer</button>
+            <a href="#display-final-score" type="button" class="view-results">View Results</a>
+        </div>
+
+    </div>
+
+    <div class="final-result">
+        <h1>The Quiz is Over</h1>
+        <div class="solved-ques-no">You Solved 10 questions of HTML</div>
+        <div class="right-wrong">3 Were Right and 4 were Wrong</div>
+        <div id="display-final-score">Your Final Score is: 35</div>
+        <div class="remark">Remark: Satisfactory, Keep trying.</div>
+        <button id="restart">Restart Quiz</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./scripts/quiz.js"></script>
+</body>
+
+</html>

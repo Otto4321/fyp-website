@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="./css/contactus.css" />
+      <title>eCare</title>
+   </head>
+   <body>
+      <nav>
+         <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+            <span class="logo"><a href="main.html">eCare</a></span>
+            <div class="menu">
+              <ul class="nav-links">
+                <li><a href="quiz.html">測試</a></li>
+                <li><a href="suggest.html">報告/建議</a></li>
+                <li><a href="music.html">音樂偏好</a></li>
+                <li><a href="camera.html">cam</a></li>
+                <li><a href="activate.html">激活裝置</a></li>
+                <li><a href="dashboard.html">情緒分析</a></li>
+                <li><a href="aboutus.html">關於我們</a></li>
+                <li><a href="login.html" class="quit">退出</a></li>
+            </ul>
+            </div>
+         </div>
+      </nav>
+
+      <section class="container">
+         <div class="text">
+           <h2>聯絡我們</h2>
+           <div class="text-contact">請填寫以下表格</div>
+           <form>
+             <div class="form-row">
+               <div class="input-data">
+                 <input type="text" required>
+                 <div class="underline"></div>
+                 <label for="">稱謂</label>
+               </div>
+               <div class="input-data">
+                 <input type="text" required>
+                 <div class="underline"></div>
+                 <label for="">標題</label>
+               </div>
+             </div>
+             <div class="form-row">
+               <div class="input-data">
+                 <input type="email" required>
+                 <div class="underline"></div>
+                 <label for="">電郵地址</label>
+               </div>
+               <div class="input-data">
+                 <input type="tel" id="valid_phone" pattern="[5679][0-9]{7}" required>
+                 <div class="underline"></div>
+                 <label for="">電話號碼 5/6/7/9xxxxxxx</label>
+               </div>
+             </div>
+             <div class="form-row">
+               <div class="input-data textarea">
+                 <textarea rows="8" cols="80" required></textarea>
+                 <br />
+                 <div class="underline"></div>
+                 <label for="">寫下你的問題及建議</label>
+                 <br />
+                 <div class="form-row submit-btn">
+                   <div class="input-data">
+                     <div class="inner"></div>
+                     <input type="submit" value="提交" onclick="validateForm(event)">
+                   </div>
+                   <div class="pop" id="pop">
+                     <img src="./images/tick.png">
+                     <h2>感謝你跟我們聯絡</h2>
+                     <p>表格已成功提交 請耐心等待我們的回覆!</p>
+                     <button type="button" onclick="closePop()">OK</button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+         </div>
+       </section>
+   </body>
+
+   <script src="./scripts/pop.js"></script>
+</html>

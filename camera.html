@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="./css/aboutus.css" />
+      <title>eCare</title>
+   </head>
+   <body>
+      <nav>
+         <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+            <span class="logo"><a href="main.html">eCare</a></span>
+            <div class="menu">
+              <ul class="nav-links">
+                <li><a href="quiz.html">測試</a></li>
+                <li><a href="suggest.html">報告/建議</a></li>
+                <li><a href="music.html">音樂偏好</a></li>
+                <li><a href="camera.html">cam</a></li>
+                <li><a href="activate.html">激活裝置</a></li>
+                <li><a href="dashboard.html">情緒分析</a></li>
+                <li><a href="aboutus.html">關於我們</a></li>
+                <li><a href="login.html" class="quit">退出</a></li>
+            </ul>
+            </div>
+         </div>
+      </nav>
+      <section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>請拍攝老人家的正面及側面</p>
+        <p>各10-15張</p>
+        <div>
+            <video autoplay="true" id="videoElement"></video>
+          </div>
+          <button onclick="captureImages()">Capture Images</button>
+          <a id="downloadLink" style="display: none" download="captured_image.png">Download Images</a>
+        </section>
+  
+        <script>
+          var capturedImages = [];
+          var captureCount = 0;
+          
+          // Access the web camera and stream video to the video element
+          navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+              var videoElement = document.getElementById('videoElement');
+              videoElement.srcObject = stream;
+            })
+            .catch(function (error) {
+              console.log('Error accessing the camera: ', error);
+            });
+      
+          // Capture images from the video stream
+          function captureImages() {
+            var videoElement = document.getElementById('videoElement');
+            var canvas = document.createElement('canvas');
+            canvas.width = videoElement.videoWidth;
+            canvas.height = videoElement.videoHeight;
+            var context = canvas.getContext('2d');
+            context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+            var capturedImageURL = canvas.toDataURL('image/png');
+            capturedImages.push(capturedImageURL);
+            captureCount++;
+            
+            // Update capture count and check if desired number of images captured
+            if (captureCount >= 20 && captureCount <= 30) {
+              document.getElementById('downloadLink').style.display = 'block';
+              document.getElementById('downloadLink').setAttribute('download', 'captured_images.zip');
+              document.getElementById('downloadLink').setAttribute('href', 'data:application/zip;base64,' + generateZip(capturedImages));
+              document.getElementById('downloadLink').innerHTML = 'Download Images (' + captureCount + ')';
+            } else if (captureCount > 30) {
+              alert('You have reached the maximum number of captures.');
+            } else {
+              document.getElementById('downloadLink').style.display = 'none';
+            }
+          }
+          
+          // Generate a zip file containing captured images
+          function generateZip(images) {
+            // Use a library or server-side code to generate the zip file
+            // This code is a placeholder and won't work in the browser
+            var zipFile = 'Generated ZIP file';
+            return zipFile;
+          }
+        </script>
+   </body>
+</html>
